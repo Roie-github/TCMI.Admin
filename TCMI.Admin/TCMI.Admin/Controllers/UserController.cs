@@ -30,6 +30,7 @@ namespace TCMI.Admin.Controllers
         {
             
             var response = Request["g-recaptcha-response"];
+            ViewBag.Message = "";
             if (!response.ToString().Equals(string.Empty))
             {
                 if (username.Equals("admin") && pass.Equals("admin"))
@@ -40,13 +41,13 @@ namespace TCMI.Admin.Controllers
                 else
                 {
 
-                    ViewBag.Message = MessageString("Invalid User or Password!");
+                    ViewBag.Message = MessageString("Invalid Username or Password!");
                 }
 
             }
             else
             {
-                ViewBag.Message = MessageString("Check captcha!");
+                ViewBag.Message = MessageString("Captcha is required!");
             }
 
             return View();
@@ -55,7 +56,7 @@ namespace TCMI.Admin.Controllers
         private string MessageString(string msg)
         {
             string returnValue = string.Empty;
-            returnValue = "<div class=\"alert alert-danger\"> <strong>Message : </strong>" + msg + "</div>";
+            returnValue = "<div class=\"alert alert-danger\"> <strong>Warning : </strong>" + msg + "</div>";
             return returnValue;
         }
     }

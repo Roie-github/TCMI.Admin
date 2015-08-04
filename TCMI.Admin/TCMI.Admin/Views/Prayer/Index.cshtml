@@ -3,46 +3,53 @@
 @{
     ViewBag.Title = "Index";
 }
+<!-- Font Awesome CSS -->
+
 
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
 <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+
+
 <div class="container">
     <div class="jumbotron">
         <h2>Prayer Request</h2>
     </div>
-    <div class="page-body">
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-        <table class="table table-bordered table-striped">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Phone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Confidentiality)
-                </th>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Prayer Request
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Phone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Confidentiality)
+                    </th>
 
-                <th>
-                    @Html.DisplayNameFor(model => model.Received)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Prayed)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Answered)
-                </th>
-                <th></th>
-            </tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Received)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Prayed)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Answered)
+                    </th>
+                    <th></th>
+                </tr>
 
-            @foreach (var item in Model)
-            {
+                @foreach (var item in Model)
+                {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
@@ -67,17 +74,29 @@
                         @Html.DisplayFor(modelItem => item.Answered)
                     </td>
                     <td>
-                        @Html.ActionLink("Update", "Update", new { id = item.id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                        @Html.ActionLink("Remove", "Remove", new { id = item.id })
+                        <a href="@Url.Action("Update", "Prayer", new { id = item.id })" class="btn btn-primary" title="Update"><i class='fa fa-pencil'></i></a>
+                        <a href="@Url.Action("Details", "Prayer", new { id = item.id })" class="btn btn-primary" title="Details"><i class='fa fa-file-text'></i></a>
+                        <a href="@Url.Action("Remove", "Prayer", new { id = item.id })" class="btn btn-danger" title="Remove"><i class='fa fa-trash'></i></a>
+                        @*@Html.ActionLink("Update", "Update", new { id = item.id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                            @Html.ActionLink("Remove", "Remove", new { id = item.id })*@
                     </td>
                 </tr>
-            }
+                }
 
-        </table>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <p>
 
+                <a href="@Url.Action("Create", "Prayer")" class="btn btn-primary" title="New Record"><i class='fa fa-plus-square'></i></a>
+                @*@Html.ActionLink("Create New", "Create")*@
+            </p>
+        </div>
     </div>
+
+
+
+
+
 </div>
-
-
-

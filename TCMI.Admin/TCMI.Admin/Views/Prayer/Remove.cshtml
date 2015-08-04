@@ -6,7 +6,7 @@
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <script src="~/Scripts/jquery-1.9.1.min.js"></script>
 <link href="~/Content/default.css" rel="stylesheet" />
-
+<link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
 <script>
     $(document).ready(function () {
         $("input[type=text]").addClass("form-control").attr("disabled", true);
@@ -88,12 +88,11 @@
             {
                 @Html.AntiForgeryToken()
                 <p>
-                    <input type="submit" value="Delete" class="btn btn-danger" />
-
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
                 </p>
             }
         </div>
     </div> <!--end panel-->
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Index", "Prayer")"><i class='fa fa-chevron-left'></i> Back to List</a>
 
 </div>

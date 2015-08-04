@@ -10,7 +10,7 @@
 <script src="~/Scripts/InsertUpdate.js"></script>
 
 <link href="~/Content/default.css" rel="stylesheet" />
-
+<link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
 <header>
     <img src="~/Images/logo.png" />
@@ -78,7 +78,7 @@
             </div>
             <div class="panel-footer">
                 <p>
-                    <input type="submit" value="Save" class="btn btn-default" />
+                    <button type="submit" class="btn btn-default"><i class="fa fa-floppy-o"></i> Save</button>
                 </p>
             </div>
         </div> <!--end panel-->
@@ -87,7 +87,7 @@
 
 
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        <a href="@Url.Action("Index", "Prayer")"><i class='fa fa-chevron-left'></i> Back to List</a>
     </div>
 </div>
 
