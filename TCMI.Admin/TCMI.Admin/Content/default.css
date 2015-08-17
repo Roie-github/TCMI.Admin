@@ -5,6 +5,10 @@
     width: 100px;
 }
 
+.btn-index {
+    width: 50px;
+}
+
 textarea.form-control {
 height:150px !important;
 }

@@ -17,7 +17,11 @@ namespace TCMI.Admin.Controllers
         {
             return View();
         }
-
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("login", "user");
+        }
 
         [HttpGet]
         public ActionResult Login()
@@ -36,7 +40,7 @@ namespace TCMI.Admin.Controllers
                 if (username.Equals("admin") && pass.Equals("admin"))
                 {
                     FormsAuthentication.SetAuthCookie(username, false);
-                    return RedirectToAction("Index", "Prayer");
+                    return RedirectToAction("index", "home");
                 }
                 else
                 {
