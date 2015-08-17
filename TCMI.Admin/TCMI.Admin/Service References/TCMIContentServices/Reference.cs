@@ -182,6 +182,144 @@ namespace TCMI.Admin.TCMIContentServices {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Event", Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    [System.SerializableAttribute()]
+    public partial class Event : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VenueField;
+        
+        private System.DateTime DateOfEventField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TimeField;
+        
+        private bool ExpiredField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Venue {
+            get {
+                return this.VenueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VenueField, value) != true)) {
+                    this.VenueField = value;
+                    this.RaisePropertyChanged("Venue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.DateTime DateOfEvent {
+            get {
+                return this.DateOfEventField;
+            }
+            set {
+                if ((this.DateOfEventField.Equals(value) != true)) {
+                    this.DateOfEventField = value;
+                    this.RaisePropertyChanged("DateOfEvent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TimeField, value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public bool Expired {
+            get {
+                return this.ExpiredField;
+            }
+            set {
+                if ((this.ExpiredField.Equals(value) != true)) {
+                    this.ExpiredField = value;
+                    this.RaisePropertyChanged("Expired");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/", ConfigurationName="TCMIContentServices.TCMIContentSoap")]
     public interface TCMIContentSoap {
@@ -227,6 +365,48 @@ namespace TCMI.Admin.TCMIContentServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/RemovePrayer", ReplyAction="*")]
         System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.RemovePrayerResponse> RemovePrayerAsync(TCMI.Admin.TCMIContentServices.RemovePrayerRequest request);
+        
+        // CODEGEN: Generating message contract since element name title from namespace http://tcmicrossroadcontent.apphb.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/AddEvent", ReplyAction="*")]
+        TCMI.Admin.TCMIContentServices.AddEventResponse AddEvent(TCMI.Admin.TCMIContentServices.AddEventRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/AddEvent", ReplyAction="*")]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.AddEventResponse> AddEventAsync(TCMI.Admin.TCMIContentServices.AddEventRequest request);
+        
+        // CODEGEN: Generating message contract since element name title from namespace http://tcmicrossroadcontent.apphb.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/UpdateEvent", ReplyAction="*")]
+        TCMI.Admin.TCMIContentServices.UpdateEventResponse UpdateEvent(TCMI.Admin.TCMIContentServices.UpdateEventRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/UpdateEvent", ReplyAction="*")]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.UpdateEventResponse> UpdateEventAsync(TCMI.Admin.TCMIContentServices.UpdateEventRequest request);
+        
+        // CODEGEN: Generating message contract since element name UpdateEventExpiredResult from namespace http://tcmicrossroadcontent.apphb.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/UpdateEventExpired", ReplyAction="*")]
+        TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponse UpdateEventExpired(TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/UpdateEventExpired", ReplyAction="*")]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponse> UpdateEventExpiredAsync(TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAllEventsResult from namespace http://tcmicrossroadcontent.apphb.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/GetAllEvents", ReplyAction="*")]
+        TCMI.Admin.TCMIContentServices.GetAllEventsResponse GetAllEvents(TCMI.Admin.TCMIContentServices.GetAllEventsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/GetAllEvents", ReplyAction="*")]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.GetAllEventsResponse> GetAllEventsAsync(TCMI.Admin.TCMIContentServices.GetAllEventsRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetActiveEventsResult from namespace http://tcmicrossroadcontent.apphb.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/GetActiveEvents", ReplyAction="*")]
+        TCMI.Admin.TCMIContentServices.GetActiveEventsResponse GetActiveEvents(TCMI.Admin.TCMIContentServices.GetActiveEventsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/GetActiveEvents", ReplyAction="*")]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.GetActiveEventsResponse> GetActiveEventsAsync(TCMI.Admin.TCMIContentServices.GetActiveEventsRequest request);
+        
+        // CODEGEN: Generating message contract since element name RemoveEventResult from namespace http://tcmicrossroadcontent.apphb.com/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/RemoveEvent", ReplyAction="*")]
+        TCMI.Admin.TCMIContentServices.RemoveEventResponse RemoveEvent(TCMI.Admin.TCMIContentServices.RemoveEventRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tcmicrossroadcontent.apphb.com/RemoveEvent", ReplyAction="*")]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.RemoveEventResponse> RemoveEventAsync(TCMI.Admin.TCMIContentServices.RemoveEventRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -674,6 +854,440 @@ namespace TCMI.Admin.TCMIContentServices {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddEventRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEvent", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.AddEventRequestBody Body;
+        
+        public AddEventRequest() {
+        }
+        
+        public AddEventRequest(TCMI.Admin.TCMIContentServices.AddEventRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class AddEventRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string title;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string desc;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public System.DateTime date;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string time;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string venue;
+        
+        public AddEventRequestBody() {
+        }
+        
+        public AddEventRequestBody(string title, string desc, System.DateTime date, string time, string venue) {
+            this.title = title;
+            this.desc = desc;
+            this.date = date;
+            this.time = time;
+            this.venue = venue;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddEventResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddEventResponse", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.AddEventResponseBody Body;
+        
+        public AddEventResponse() {
+        }
+        
+        public AddEventResponse(TCMI.Admin.TCMIContentServices.AddEventResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class AddEventResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AddEventResult;
+        
+        public AddEventResponseBody() {
+        }
+        
+        public AddEventResponseBody(string AddEventResult) {
+            this.AddEventResult = AddEventResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateEventRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEvent", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.UpdateEventRequestBody Body;
+        
+        public UpdateEventRequest() {
+        }
+        
+        public UpdateEventRequest(TCMI.Admin.TCMIContentServices.UpdateEventRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class UpdateEventRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string title;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string desc;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public System.DateTime date;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string time;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string venue;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool isexpired;
+        
+        public UpdateEventRequestBody() {
+        }
+        
+        public UpdateEventRequestBody(int id, string title, string desc, System.DateTime date, string time, string venue, bool isexpired) {
+            this.id = id;
+            this.title = title;
+            this.desc = desc;
+            this.date = date;
+            this.time = time;
+            this.venue = venue;
+            this.isexpired = isexpired;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateEventResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEventResponse", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.UpdateEventResponseBody Body;
+        
+        public UpdateEventResponse() {
+        }
+        
+        public UpdateEventResponse(TCMI.Admin.TCMIContentServices.UpdateEventResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class UpdateEventResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string UpdateEventResult;
+        
+        public UpdateEventResponseBody() {
+        }
+        
+        public UpdateEventResponseBody(string UpdateEventResult) {
+            this.UpdateEventResult = UpdateEventResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateEventExpiredRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEventExpired", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequestBody Body;
+        
+        public UpdateEventExpiredRequest() {
+        }
+        
+        public UpdateEventExpiredRequest(TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class UpdateEventExpiredRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public UpdateEventExpiredRequestBody() {
+        }
+        
+        public UpdateEventExpiredRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateEventExpiredResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateEventExpiredResponse", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponseBody Body;
+        
+        public UpdateEventExpiredResponse() {
+        }
+        
+        public UpdateEventExpiredResponse(TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class UpdateEventExpiredResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string UpdateEventExpiredResult;
+        
+        public UpdateEventExpiredResponseBody() {
+        }
+        
+        public UpdateEventExpiredResponseBody(string UpdateEventExpiredResult) {
+            this.UpdateEventExpiredResult = UpdateEventExpiredResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllEventsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllEvents", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.GetAllEventsRequestBody Body;
+        
+        public GetAllEventsRequest() {
+        }
+        
+        public GetAllEventsRequest(TCMI.Admin.TCMIContentServices.GetAllEventsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllEventsRequestBody {
+        
+        public GetAllEventsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllEventsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllEventsResponse", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.GetAllEventsResponseBody Body;
+        
+        public GetAllEventsResponse() {
+        }
+        
+        public GetAllEventsResponse(TCMI.Admin.TCMIContentServices.GetAllEventsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class GetAllEventsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public TCMI.Admin.TCMIContentServices.Event[] GetAllEventsResult;
+        
+        public GetAllEventsResponseBody() {
+        }
+        
+        public GetAllEventsResponseBody(TCMI.Admin.TCMIContentServices.Event[] GetAllEventsResult) {
+            this.GetAllEventsResult = GetAllEventsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetActiveEventsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetActiveEvents", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.GetActiveEventsRequestBody Body;
+        
+        public GetActiveEventsRequest() {
+        }
+        
+        public GetActiveEventsRequest(TCMI.Admin.TCMIContentServices.GetActiveEventsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetActiveEventsRequestBody {
+        
+        public GetActiveEventsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetActiveEventsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetActiveEventsResponse", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.GetActiveEventsResponseBody Body;
+        
+        public GetActiveEventsResponse() {
+        }
+        
+        public GetActiveEventsResponse(TCMI.Admin.TCMIContentServices.GetActiveEventsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class GetActiveEventsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public TCMI.Admin.TCMIContentServices.Event[] GetActiveEventsResult;
+        
+        public GetActiveEventsResponseBody() {
+        }
+        
+        public GetActiveEventsResponseBody(TCMI.Admin.TCMIContentServices.Event[] GetActiveEventsResult) {
+            this.GetActiveEventsResult = GetActiveEventsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RemoveEventRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RemoveEvent", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.RemoveEventRequestBody Body;
+        
+        public RemoveEventRequest() {
+        }
+        
+        public RemoveEventRequest(TCMI.Admin.TCMIContentServices.RemoveEventRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class RemoveEventRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public RemoveEventRequestBody() {
+        }
+        
+        public RemoveEventRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RemoveEventResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RemoveEventResponse", Namespace="http://tcmicrossroadcontent.apphb.com/", Order=0)]
+        public TCMI.Admin.TCMIContentServices.RemoveEventResponseBody Body;
+        
+        public RemoveEventResponse() {
+        }
+        
+        public RemoveEventResponse(TCMI.Admin.TCMIContentServices.RemoveEventResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tcmicrossroadcontent.apphb.com/")]
+    public partial class RemoveEventResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string RemoveEventResult;
+        
+        public RemoveEventResponseBody() {
+        }
+        
+        public RemoveEventResponseBody(string RemoveEventResult) {
+            this.RemoveEventResult = RemoveEventResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface TCMIContentSoapChannel : TCMI.Admin.TCMIContentServices.TCMIContentSoap, System.ServiceModel.IClientChannel {
     }
@@ -869,6 +1483,172 @@ namespace TCMI.Admin.TCMIContentServices {
             inValue.Body = new TCMI.Admin.TCMIContentServices.RemovePrayerRequestBody();
             inValue.Body.id = id;
             return ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).RemovePrayerAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TCMI.Admin.TCMIContentServices.AddEventResponse TCMI.Admin.TCMIContentServices.TCMIContentSoap.AddEvent(TCMI.Admin.TCMIContentServices.AddEventRequest request) {
+            return base.Channel.AddEvent(request);
+        }
+        
+        public string AddEvent(string title, string desc, System.DateTime date, string time, string venue) {
+            TCMI.Admin.TCMIContentServices.AddEventRequest inValue = new TCMI.Admin.TCMIContentServices.AddEventRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.AddEventRequestBody();
+            inValue.Body.title = title;
+            inValue.Body.desc = desc;
+            inValue.Body.date = date;
+            inValue.Body.time = time;
+            inValue.Body.venue = venue;
+            TCMI.Admin.TCMIContentServices.AddEventResponse retVal = ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).AddEvent(inValue);
+            return retVal.Body.AddEventResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.AddEventResponse> TCMI.Admin.TCMIContentServices.TCMIContentSoap.AddEventAsync(TCMI.Admin.TCMIContentServices.AddEventRequest request) {
+            return base.Channel.AddEventAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.AddEventResponse> AddEventAsync(string title, string desc, System.DateTime date, string time, string venue) {
+            TCMI.Admin.TCMIContentServices.AddEventRequest inValue = new TCMI.Admin.TCMIContentServices.AddEventRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.AddEventRequestBody();
+            inValue.Body.title = title;
+            inValue.Body.desc = desc;
+            inValue.Body.date = date;
+            inValue.Body.time = time;
+            inValue.Body.venue = venue;
+            return ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).AddEventAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TCMI.Admin.TCMIContentServices.UpdateEventResponse TCMI.Admin.TCMIContentServices.TCMIContentSoap.UpdateEvent(TCMI.Admin.TCMIContentServices.UpdateEventRequest request) {
+            return base.Channel.UpdateEvent(request);
+        }
+        
+        public string UpdateEvent(int id, string title, string desc, System.DateTime date, string time, string venue, bool isexpired) {
+            TCMI.Admin.TCMIContentServices.UpdateEventRequest inValue = new TCMI.Admin.TCMIContentServices.UpdateEventRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.UpdateEventRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.title = title;
+            inValue.Body.desc = desc;
+            inValue.Body.date = date;
+            inValue.Body.time = time;
+            inValue.Body.venue = venue;
+            inValue.Body.isexpired = isexpired;
+            TCMI.Admin.TCMIContentServices.UpdateEventResponse retVal = ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).UpdateEvent(inValue);
+            return retVal.Body.UpdateEventResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.UpdateEventResponse> TCMI.Admin.TCMIContentServices.TCMIContentSoap.UpdateEventAsync(TCMI.Admin.TCMIContentServices.UpdateEventRequest request) {
+            return base.Channel.UpdateEventAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.UpdateEventResponse> UpdateEventAsync(int id, string title, string desc, System.DateTime date, string time, string venue, bool isexpired) {
+            TCMI.Admin.TCMIContentServices.UpdateEventRequest inValue = new TCMI.Admin.TCMIContentServices.UpdateEventRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.UpdateEventRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.title = title;
+            inValue.Body.desc = desc;
+            inValue.Body.date = date;
+            inValue.Body.time = time;
+            inValue.Body.venue = venue;
+            inValue.Body.isexpired = isexpired;
+            return ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).UpdateEventAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponse TCMI.Admin.TCMIContentServices.TCMIContentSoap.UpdateEventExpired(TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequest request) {
+            return base.Channel.UpdateEventExpired(request);
+        }
+        
+        public string UpdateEventExpired(int id) {
+            TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequest inValue = new TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequestBody();
+            inValue.Body.id = id;
+            TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponse retVal = ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).UpdateEventExpired(inValue);
+            return retVal.Body.UpdateEventExpiredResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponse> TCMI.Admin.TCMIContentServices.TCMIContentSoap.UpdateEventExpiredAsync(TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequest request) {
+            return base.Channel.UpdateEventExpiredAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponse> UpdateEventExpiredAsync(int id) {
+            TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequest inValue = new TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.UpdateEventExpiredRequestBody();
+            inValue.Body.id = id;
+            return ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).UpdateEventExpiredAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TCMI.Admin.TCMIContentServices.GetAllEventsResponse TCMI.Admin.TCMIContentServices.TCMIContentSoap.GetAllEvents(TCMI.Admin.TCMIContentServices.GetAllEventsRequest request) {
+            return base.Channel.GetAllEvents(request);
+        }
+        
+        public TCMI.Admin.TCMIContentServices.Event[] GetAllEvents() {
+            TCMI.Admin.TCMIContentServices.GetAllEventsRequest inValue = new TCMI.Admin.TCMIContentServices.GetAllEventsRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.GetAllEventsRequestBody();
+            TCMI.Admin.TCMIContentServices.GetAllEventsResponse retVal = ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).GetAllEvents(inValue);
+            return retVal.Body.GetAllEventsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.GetAllEventsResponse> TCMI.Admin.TCMIContentServices.TCMIContentSoap.GetAllEventsAsync(TCMI.Admin.TCMIContentServices.GetAllEventsRequest request) {
+            return base.Channel.GetAllEventsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.GetAllEventsResponse> GetAllEventsAsync() {
+            TCMI.Admin.TCMIContentServices.GetAllEventsRequest inValue = new TCMI.Admin.TCMIContentServices.GetAllEventsRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.GetAllEventsRequestBody();
+            return ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).GetAllEventsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TCMI.Admin.TCMIContentServices.GetActiveEventsResponse TCMI.Admin.TCMIContentServices.TCMIContentSoap.GetActiveEvents(TCMI.Admin.TCMIContentServices.GetActiveEventsRequest request) {
+            return base.Channel.GetActiveEvents(request);
+        }
+        
+        public TCMI.Admin.TCMIContentServices.Event[] GetActiveEvents() {
+            TCMI.Admin.TCMIContentServices.GetActiveEventsRequest inValue = new TCMI.Admin.TCMIContentServices.GetActiveEventsRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.GetActiveEventsRequestBody();
+            TCMI.Admin.TCMIContentServices.GetActiveEventsResponse retVal = ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).GetActiveEvents(inValue);
+            return retVal.Body.GetActiveEventsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.GetActiveEventsResponse> TCMI.Admin.TCMIContentServices.TCMIContentSoap.GetActiveEventsAsync(TCMI.Admin.TCMIContentServices.GetActiveEventsRequest request) {
+            return base.Channel.GetActiveEventsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.GetActiveEventsResponse> GetActiveEventsAsync() {
+            TCMI.Admin.TCMIContentServices.GetActiveEventsRequest inValue = new TCMI.Admin.TCMIContentServices.GetActiveEventsRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.GetActiveEventsRequestBody();
+            return ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).GetActiveEventsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TCMI.Admin.TCMIContentServices.RemoveEventResponse TCMI.Admin.TCMIContentServices.TCMIContentSoap.RemoveEvent(TCMI.Admin.TCMIContentServices.RemoveEventRequest request) {
+            return base.Channel.RemoveEvent(request);
+        }
+        
+        public string RemoveEvent(int id) {
+            TCMI.Admin.TCMIContentServices.RemoveEventRequest inValue = new TCMI.Admin.TCMIContentServices.RemoveEventRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.RemoveEventRequestBody();
+            inValue.Body.id = id;
+            TCMI.Admin.TCMIContentServices.RemoveEventResponse retVal = ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).RemoveEvent(inValue);
+            return retVal.Body.RemoveEventResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.RemoveEventResponse> TCMI.Admin.TCMIContentServices.TCMIContentSoap.RemoveEventAsync(TCMI.Admin.TCMIContentServices.RemoveEventRequest request) {
+            return base.Channel.RemoveEventAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TCMI.Admin.TCMIContentServices.RemoveEventResponse> RemoveEventAsync(int id) {
+            TCMI.Admin.TCMIContentServices.RemoveEventRequest inValue = new TCMI.Admin.TCMIContentServices.RemoveEventRequest();
+            inValue.Body = new TCMI.Admin.TCMIContentServices.RemoveEventRequestBody();
+            inValue.Body.id = id;
+            return ((TCMI.Admin.TCMIContentServices.TCMIContentSoap)(this)).RemoveEventAsync(inValue);
         }
     }
 }

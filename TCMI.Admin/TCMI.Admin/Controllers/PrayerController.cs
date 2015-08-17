@@ -17,7 +17,6 @@ namespace TCMI.Admin.Controllers
                
         public ActionResult Index()
         {
-
             IEnumerable<TCMI.Admin.TCMIContentServices.Prayer> result = client.GetPrayers().ToList();
             return View(result);
         }

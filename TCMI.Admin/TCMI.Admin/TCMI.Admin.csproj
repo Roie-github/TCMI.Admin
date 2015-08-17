@@ -110,11 +110,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\PrayerController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EventMeta.cs" />
     <Compile Include="Models\PrayerMeta.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +181,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\InsertUpdate.js" />
+    <Content Include="Scripts\InsertUpdateEvent.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -204,6 +207,27 @@
     <Content Include="Service References\TCMIContentServices\TCMI.Admin.TCMIContentServices.UpdatePrayerResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\TCMIContentServices\TCMI.Admin.TCMIContentServices.AddEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TCMIContentServices\TCMI.Admin.TCMIContentServices.Event.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TCMIContentServices\TCMI.Admin.TCMIContentServices.GetActiveEventsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TCMIContentServices\TCMI.Admin.TCMIContentServices.GetAllEventsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TCMIContentServices\TCMI.Admin.TCMIContentServices.RemoveEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TCMIContentServices\TCMI.Admin.TCMIContentServices.UpdateEventExpiredResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\TCMIContentServices\TCMI.Admin.TCMIContentServices.UpdateEventResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\TCMIContentServices\TCMIContent.disco" />
     <None Include="Service References\TCMIContentServices\configuration91.svcinfo" />
     <None Include="Service References\TCMIContentServices\configuration.svcinfo" />
@@ -227,6 +251,11 @@
     <Content Include="Views\Prayer\Update.cshtml" />
     <Content Include="Views\Prayer\Details.cshtml" />
     <Content Include="Views\Prayer\Remove.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Event\Update.cshtml" />
+    <Content Include="Views\Event\Details.cshtml" />
+    <Content Include="Views\Event\Remove.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

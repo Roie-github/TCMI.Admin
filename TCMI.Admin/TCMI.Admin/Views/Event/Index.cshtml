@@ -1,0 +1,81 @@
+﻿@model IEnumerable<TCMI.Admin.TCMIContentServices.Event>
+
+@{
+    ViewBag.Title = "Event";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+
+<div class="container">
+    <div class="page-header"><h2>Events</h2></div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">Facilitate Events for TCMI</div>
+        <div class="panel-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Venue)
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Time)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Expired)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Venue)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateOfEvent)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Time)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Expired)
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Update", "Event", new { id = item.id })" class="btn btn-primary" title="Update"><i class='fa fa-pencil'></i></a>
+                                <a href="@Url.Action("Details", "Event", new { id = item.id })" class="btn btn-primary" title="Details"><i class='fa fa-file-text'></i></a>
+                                <a href="@Url.Action("Remove", "Event", new { id = item.id })" class="btn btn-danger" title="Remove"><i class='fa fa-trash'></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <p>
+                <a href="@Url.Action("Create", "Event")" class="btn btn-primary" title="New Record"><i class='fa fa-plus-square'></i></a>
+                
+            </p>
+        </div>
+    </div>
+</div>
+

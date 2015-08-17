@@ -19,7 +19,7 @@ namespace TCMI.Admin.Models
         public string Phone { get; set; }
         [Required]
         public string Confidentiality { get; set; }
-        [Required(ErrorMessage = "Prayer Request is required.")]
+        [Required(ErrorMessage = "The Prayer Request field is required.")]
         public string PrayerRequest { get; set; }
         public System.DateTime Received { get; set; }
         public int Prayed { get; set; }

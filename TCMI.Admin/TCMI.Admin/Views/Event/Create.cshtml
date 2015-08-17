@@ -1,0 +1,83 @@
+﻿@model TCMI.Admin.Models.EventMeta
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/InsertUpdateEvent.js"></script>
+
+<link href="~/Content/default.css" rel="stylesheet" />
+<link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="page-header"><h2>Create</h2></div>
+
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Event</div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title)
+
+                    @Html.EditorFor(model => model.Title)
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description)
+
+                    @Html.EditorFor(model => model.Description)
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Venue)
+
+                    @Html.EditorFor(model => model.Venue)
+                    @Html.ValidationMessageFor(model => model.Venue)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DateOfEvent)
+
+                    @Html.EditorFor(model => model.DateOfEvent)
+                    @Html.ValidationMessageFor(model => model.DateOfEvent)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Time)
+
+                    @Html.EditorFor(model => model.Time)
+                    @Html.ValidationMessageFor(model => model.Time)
+                </div>
+
+               
+            </div>
+
+            <div class="panel-footer">
+                <p>
+                    <button type="submit" class="btn btn-default"><i class="fa fa-floppy-o"></i> Save</button>
+                </p>
+            </div>
+        </div>
+    }
+
+    <div>
+        <a href="@Url.Action("index", "event")"><i class='fa fa-chevron-left'></i> Back to List</a>
+
+    </div>
+
+
+</div>

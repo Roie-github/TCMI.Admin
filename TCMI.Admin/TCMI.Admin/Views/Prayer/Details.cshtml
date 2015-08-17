@@ -6,17 +6,6 @@
 
 
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
-<script src="~/Scripts/jquery-1.9.1.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("input[type=text]").addClass("form-control").attr("disabled", true);
-        $("input[type=email]").addClass("form-control").attr("disabled", true);
-        $("input[type=datetime]").addClass("form-control").attr("disabled", true);
-        $("textarea").addClass("form-control").attr("disabled", true);
-        $("select").addClass("form-control").attr("disabled", true);
-    });
-</script>
-
 <link href="~/Content/default.css" rel="stylesheet" />
 <link href="~/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
@@ -88,8 +77,8 @@
             </div>
         </div>
         <div class="panel-footer">
-            <a href="@Url.Action("Index", "Prayer")"><i class='fa fa-chevron-left'></i> Back to List</a> |
-            <a href="@Url.Action("Update", "Prayer", new { id = Model.id })"><i class='fa fa fa-pencil'></i> Update</a>
+            <a href="@Url.Action("index", "prayer")"><i class='fa fa-chevron-left'></i> Back to List</a> |
+            <a href="@Url.Action("update", "prayer", new { id = Model.id })"><i class='fa fa fa-pencil'></i> Update</a>
             
             @*@Html.ActionLink("Update", "Update", new { id = Model.id }) |
             @Html.ActionLink("Back to List", "Index")*@
@@ -97,3 +86,13 @@
     </div> <!--end panel-->
 </div>
 
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("input[type=text]").addClass("form-control").attr("disabled", true);
+        $("input[type=email]").addClass("form-control").attr("disabled", true);
+        $("input[type=datetime]").addClass("form-control").attr("disabled", true);
+        $("textarea").addClass("form-control").attr("disabled", true);
+        $("select").addClass("form-control").attr("disabled", true);
+    });
+</script>
